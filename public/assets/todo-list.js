@@ -10,8 +10,6 @@ $(document).ready(function(){
 		let item = $('form input');
 		let todo = {item: item.val()};
 		console.log('todo');
-		let item = $("form input");
-		let todo = {iem: item.val()};
 		$.ajax({
 			type: 'POST',
 			url: '/todo/',

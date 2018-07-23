@@ -8,14 +8,14 @@ module.exports = function(app, db, passport){
 //  crud is the basis of all applications
 //  Update will not be included in this application
 
-	app.get('/', isLoggedIn, function(req, res){
+	app.get('/', isLoggedIn,function(req, res){
 		//read
 		console.log('Read');
 		let sql = 'select * from todoItems WHERE userID=' + req.user.id +';';
 		db.query(sql, (err, results) => {
 			if(err) throw err;
 			console.log(results);
-			res.render('todo', {todos: results, user: req.users});
+			res.render('todo', {todos: results, user: req.user});
 		});
 	});
 
